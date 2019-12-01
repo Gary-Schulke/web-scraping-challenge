@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--     # Assignment: web-scraping-challenge
+         # Gary Schulke 11/27/2019 -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Go to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>Get the latest picures, weather, and facts from</p>
+      <p style="color: red"><strong>The Red Planet</strong></p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data</a></p>
+    </div>
+    <h2>Latest News from Mars</h2>
+    <h3>{{ marsdata.news_title }}</h3>
+    <h4>{{ marsdata.news_p }}</h4>
+    <div style="float:left">
+      <img src="{{ marsdata.featured_image }}" alt="Featured Image" width="850" height="850">
+    </div>
+    <div style="float:left">
+      <table border="0" width="54" style="margin-left:20%;float:top;">
+        <tr>
+          <th>
+            <h3 style="padding-left:10px; border-bottom: 1px; border-top: 0px"><strong>Mars Weather</strong></h3>
+          </th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black">
+            <p style="width:340px; padding-left:10px">{{marsdata.weather}}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br> <br> <br><br> <br> <br> <br><br> <br>
+    <div style="float:left">
+      <table border="0" width="54" style="margin-left:20%;float:top;">
+        <tr>
+          <th>
+            <h3 style="padding-left:10px; border-bottom: 1px; border-top: 0px"><strong>Mars Facts</strong></h3>
+          </th>
+        </tr>
+        {% for row in marsdata.facts %}
+        <tr>
+          <td style="border: 1px solid black">
+            <p style="width:150px; padding-left:10px"><strong>{{row[0]}}</strong></p>
+          </td>
+          <td style="border: 1px solid black">
+            <p style="width:190px; padding-left:10px">{{row[1]}}</p>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+  </div>
+
+  <div class="container-fluid">
+    <h2 style="text-align: center;"><strong>Mars Hemispheres</strong></h2>
+
+    <div style="float:left">
+      <img src="{{marsdata.hemispheres[0].img_url}}" alt="{{marsdata.hemispheres[0].title}}" width="600" height="600">
+      <p><strong>{{marsdata.hemispheres[0].title}}</strong></p>
+    </div>
+    <div style="float:left; margin-left: 75px;">
+      <img src="{{marsdata.hemispheres[1].img_url}}" alt="{{marsdata.hemispheres[1].title}}" width="600" height="600">
+      <p><strong>{{marsdata.hemispheres[1].title}}</strong></p>
+    </div>
+    <br>
+    <div style="float:left">
+      <img src="{{marsdata.hemispheres[2].img_url}}" alt="{{marsdata.hemispheres[2].title}}" width="600" height="600">
+      <p><strong>{{marsdata.hemispheres[2].title}}</strong></p>
+    </div>
+    <div style="float:left; margin-left: 75px;">
+      <img src="{{marsdata.hemispheres[3].img_url}}" alt="{{marsdata.hemispheres[3].title}}" width="600" height="600">
+      <p><strong>{{marsdata.hemispheres[3].title}}</strong></p>
+    </div>
+  </div>
+</body>
+
+</html>
