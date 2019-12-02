@@ -1,0 +1,20 @@
+Web Scraping Challenge
+Gary Schulke
+12/2/2019
+
+Git Repository
+https://github.com/Gary-Schulke/web-scraping-challenge.git
+
+Submitted files:
+https://github.com/Gary-Schulke/web-scraping-challenge.git
+│   FileListing.txt (this file)
+│
+└───Missions_to_Mars
+    │   MissionToMars.png
+    │   mission_to_mars.ipynb
+    │   scrape_app.py
+    │   scrape_mars.py
+    │
+    └───templates
+            index.html
+			
